@@ -54,8 +54,8 @@ inquirer
       let license = responses.license;
       let contributing = responses.contributing;
       let tests = responses.tests;
-      let badges = responses.badges;
-      let answers = title + "\n" + "\n" + description + "\n" + "\n" + installation + "\n" + "\n" + usage + "\n" + "\n" + license + "\n" + "\n" + "\n" + contributing + "\n" + "\n" + tests + "\n" + "\n" + badges + "\n" + "\n" + userEmail + "\n" + "\n" + "![](" + userProfile + ")";
+      let answers = "<h2>" + title + "</h2>" + "\n" + "\n" + description + "\n" + "\n" + installation + "\n" + "\n" + usage + "\n" + "\n" + license + "\n" + "\n" + "\n" + contributing + "\n" + "\n" + tests + "\n" + "\n" + userEmail + "\n" + "\n" + "![](" + userProfile + ")";
       fs.writeFile("readMe.md", answers, () => { });
     })
   })
+      

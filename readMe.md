@@ -1,19 +1,17 @@
-chance
+<h2>Chance Wright</h2>
 
-is
+asdf
 
-name
+asdf
 
-today
+asdf
 
-hello
+asdf
 
 
-i
+asdf
 
-am
-
-undefined
+asdf
 
 cwright489@gmail.com
 
