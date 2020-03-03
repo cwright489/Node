@@ -40,3 +40,22 @@ inquirer
     name: "username",
     message: "Insert Github username:"
   },
+]).then(function (responses) {
+    console.log(responses);
+    username = responses.username;
+    api.getUser(username).then(function (res) {
+      console.log(res.data[0].payload.commits[0].author.email);
+      const userEmail = res.data[0].payload.commits[0].author.email;
+      const userProfile = res.data[0].actor.avatar_url;
+      let title = responses.title;
+      let description = responses.description;
+      let installation = responses.installation;
+      let usage = responses.usage;
+      let license = responses.license;
+      let contributing = responses.contributing;
+      let tests = responses.tests;
+      let badges = responses.badges;
+      let answers = title + "\n" + description + "\n" + installation + "\n" + usage + "\n" + license + "\n" + contributing + "\n" + tests + "\n" + badges + "\n" + userEmail + "\n" + "![](" + userProfile + ")";
+      fs.writeFile("readMe.md", answers, () => { });
+    })
+  })
