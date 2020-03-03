@@ -13,8 +13,16 @@ inquirer
     message: "Insert description of your Project. Be as specific as possible:"
   },{
     type:"input",
-    name: "tableOfContents",
-    message: "Insert a table of contents for this project:"
+    name: "tableOfContents0",
+    message: "Insert the first entry for a table of contents for this project:"
+  },{
+    type:"input",
+    name: "tableOfContents1",
+    message: "Insert the second entry for a table of contents for this project:"
+  },{
+    type:"input",
+    name: "tableOfContents2",
+    message: "Insert the third entry for a table of contents for this project:"
   },{
     type: "input",
     name: "installation",
@@ -49,12 +57,27 @@ inquirer
       const userProfile = res.data[0].actor.avatar_url;
       let title = responses.title;
       let description = responses.description;
+      let tOC0 = responses.tableOfContents0;
+      let tOC1 = responses.tableOfContents1;
+      let tOC2 = responses.tableOfContents2;
       let installation = responses.installation;
       let usage = responses.usage;
       let license = responses.license;
       let contributing = responses.contributing;
       let tests = responses.tests;
-      let answers = "<h2>" + title + "</h2>" + "\n" + "\n" + description + "\n" + "\n" + installation + "\n" + "\n" + usage + "\n" + "\n" + license + "\n" + "\n" + "\n" + contributing + "\n" + "\n" + tests + "\n" + "\n" + userEmail + "\n" + "\n" + "![](" + userProfile + ")";
+      let answers = "<h2>" + title + "</h2>" + "\n" + "\n" + 
+        "<h3>Snapshot</h3>" + "\n" + description + "\n" + "\n" + 
+        "<h3>How to Install</h3>" + "\n" + installation + "\n" + "\n" + 
+        "<h3>Table of Contents</h3>" + "\n" +
+        tOC0 + "\n" +
+        tOC1 + "\n" +
+        tOC2 + "\n" + "\n" +
+        "<h3>Screenshots of Usage</h3>" + "\n" + usage + "\n" + "\n" + 
+        "<h3>Licensing</h3>" + "\n" + license + "\n" + "\n" + 
+        "<h3>Contributors</h3>" + "\n" + contributing + "\n" + "\n" + 
+        "<h3>Screenshots of code</h3>" + "\n" + tests + "\n" + "\n" + 
+        userEmail + "\n" + "\n" + 
+        "![](" + userProfile + ")";
       fs.writeFile("readMe.md", answers, () => { });
     })
   })
