@@ -6,11 +6,11 @@ inquirer
   .prompt([{
     type: "input",
     name: "title",
-    message: "Instert project title:"
+    message: "Insert project title:"
   },{
     type: "input",
     name: "description",
-    message: "Instert description of your Project. Be as specific as possible:"
+    message: "Insert description of your Project. Be as specific as possible:"
   },{
     type:"input",
     name: "tableOfContents",
@@ -18,22 +18,22 @@ inquirer
   },{
     type: "input",
     name: "installation",
-    message: "Instert steps taken to install this application:"
+    message: "Insert steps taken to install this application:"
   },{
     type: "input",
     name: "usage",
-    message: "Instert instructions on how to use this application:"
+    message: "Insert instructions on how to use this application:"
   },{
     type: "input",
     name: "license",
-    message: "Instert licensing for this project:"
+    message: "Insert licensing for this project:"
   },{
     type: "input",
     name: "contributing",
     message: "Insert if anyone else worked on this project with you:"
   },{
     type: "input",
-    name: "test",
+    name: "tests",
     message: "Insert different ways this application can be tested:"
   },{
     type: "input",
@@ -55,7 +55,7 @@ inquirer
       let contributing = responses.contributing;
       let tests = responses.tests;
       let badges = responses.badges;
-      let answers = title + "\n" + description + "\n" + installation + "\n" + usage + "\n" + license + "\n" + contributing + "\n" + tests + "\n" + badges + "\n" + userEmail + "\n" + "![](" + userProfile + ")";
+      let answers = title + "\n" + "\n" + description + "\n" + "\n" + installation + "\n" + "\n" + usage + "\n" + "\n" + license + "\n" + "\n" + "\n" + contributing + "\n" + "\n" + tests + "\n" + "\n" + badges + "\n" + "\n" + userEmail + "\n" + "\n" + "![](" + userProfile + ")";
       fs.writeFile("readMe.md", answers, () => { });
     })
   })
